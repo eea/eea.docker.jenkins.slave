@@ -1,5 +1,11 @@
 # Changelog
 
+
+## 3.15 (2019-04-16)
+
+- Upgrade to swarm-client 3.15
+- Upgrade gosu to 1.11
+
 ## 3.14 (2018-09-07)
 
 - Upgrade to swarm-client 3.14
