@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.15.1 (2019-05-29)
+
+- Install Python virtualenv
 
 ## 3.15 (2019-04-16)
 
@@ -24,7 +27,7 @@
 
 ## 3.6.1 (2017-10-30)
 
-- Updated jenkins slave name 
+- Updated jenkins slave name
   [valentinab25 regarding #3]
 
 ## 3.6 (2017-10-20)
