@@ -24,12 +24,20 @@ RUN apt-get update \
  && chmod +x /usr/local/bin/gosu \
  && gosu nobody true
 
+# Python virtualenv
+RUN curl "https://bootstrap.pypa.io/get-pip.py" -o "/tmp/get-pip.py" \
+ && python /tmp/get-pip.py \
+ && pip install virtualenv \
+ && rm /tmp/get-pip.py
+
+# PhantomJS
 RUN wget --no-check-certificate https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOMJS_VERSION.tar.bz2 \
  && echo "$MD5PHANTOMJS  ${PHANTOMJS_VERSION}.tar.bz2" | md5sum -c - \
  && tar xvf ${PHANTOMJS_VERSION}.tar.bz2 \
  && mv $PHANTOMJS_VERSION/bin/phantomjs /usr/local/bin/ \
  && rm -rf phantom*
 
+# CasperJS
 RUN git clone  -b ${CASPERJS_VERSION}  git://github.com/casperjs/casperjs.git \
  && mv casperjs /opt/ \
  && ln -sf /opt/casperjs/bin/casperjs /usr/local/bin/casperjs
