@@ -4,7 +4,7 @@ pipeline {
   environment {
     GIT_NAME = "eea.docker.jenkins.slave"
     registry = "eeacms/jenkins-slave"
-    template = "templates/jenkins-slave"
+    template = "templates/jenkins-worker"
     DEPENDENT_DOCKERFILE_URL="eea/eea.docker.jenkins.slave-dind/blob/master/Dockerfile eea/eea.docker.jenkins.slave-eea/blob/master/Dockerfile"
   }
   
