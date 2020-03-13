@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.18 (2020-03-13)
+
+- Upgrade to swarm-client 3.18
 
 ## 3.17 (2019-12-02)
 
