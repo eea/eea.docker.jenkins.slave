@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.21 (2020-06-05)
+
+- Upgrade to swarm-client 3.21
+- Add ENV variable `OPENSSL_CONF`
+
 ## 3.18 (2020-03-13)
 
 - Upgrade to swarm-client 3.18

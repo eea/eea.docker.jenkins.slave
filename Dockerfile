@@ -1,11 +1,12 @@
 FROM openjdk:8
 
 ENV GOSU_VERSION=1.11 \
-    SWARM_VERSION=3.18 \
-    MD5=09b86c29b9fd0479abe760bba9628a90 \
+    SWARM_VERSION=3.21 \
+    MD5=5a823a7d3e49e82950fb65bf1d97cc50 \
     PHANTOMJS_VERSION=phantomjs-2.1.1-linux-x86_64 \
     MD5PHANTOMJS=1c947d57fce2f21ce0b43fe2ed7cd361  \
-    CASPERJS_VERSION=1.1.4-2
+    CASPERJS_VERSION=1.1.4-2 \
+    OPENSSL_CONF=/etc/ssl/
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
