@@ -101,6 +101,14 @@ if [ ! -z "$JENKINS_OPTS" ]; then
   PARAMS="$PARAMS $JENKINS_OPTS"
 fi
 
+RUN_AS_USER=jenkins
+
+if [[ "$RUN_AS_ROOT" == "yes" ]]; then
+  RUN_AS_USER=root
+  usermod -d /var/jenkins_home/worker/ root
+fi
+
+
 
 echo "Fixing permissions"
 chown -v jenkins:jenkins /var/jenkins_home/worker/
@@ -114,11 +122,11 @@ if [ ! -e /var/jenkins_home/worker/.ssh/id_rsa.pub ]; then
 fi
 
 if [ "$1" = "java" ]; then
-  exec gosu jenkins java $JAVA_OPTS -jar /bin/swarm-client.jar -fsroot /var/jenkins_home/worker/ -labels "$JENKINS_LABELS" $PARAMS
+  exec gosu $RUN_AS_USER java $JAVA_OPTS -jar /bin/swarm-client.jar -fsroot /var/jenkins_home/worker/ -labels "$JENKINS_LABELS" $PARAMS
 fi
 
 if [[ "$1" == "-"* ]]; then
-  exec gosu jenkins java $JAVA_OPTS -jar /bin/swarm-client.jar -fsroot /var/jenkins_home/worker/ -labels "$JENKINS_LABELS" $PARAMS "$@"
+  exec gosu $RUN_AS_USER java $JAVA_OPTS -jar /bin/swarm-client.jar -fsroot /var/jenkins_home/worker/ -labels "$JENKINS_LABELS" $PARAMS "$@"
 fi
 
 exec "$@"
