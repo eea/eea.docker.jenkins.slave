@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.23 (2020-10-16)
+
+- Upgrade to swarm-client 3.23
+- Upgrade to gosu 1.12
+
 ## 3.22 (2020-07-06)
 
 - Upgrade to swarm-client 3.22
