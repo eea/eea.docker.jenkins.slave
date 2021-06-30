@@ -110,9 +110,6 @@ fi
 
 
 
-echo "Fixing permissions"
-chown -R jenkins:jenkins /var/jenkins_home/worker/
-
 if [ ! -e /var/jenkins_home/worker/.ssh/id_rsa.pub ]; then
   gosu jenkins ssh-keygen -q -N "" -f /var/jenkins_home/worker/.ssh/id_rsa
   echo "Jenkins Slave SSH public key is:"
