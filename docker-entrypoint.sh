@@ -108,7 +108,7 @@ if [[ "$RUN_AS_ROOT" == "yes" ]]; then
   usermod -d /var/jenkins_home/worker/ root
 fi
 
-
+chown jenkins:jenkins /var/jenkins_home/worker
 
 if [ ! -e /var/jenkins_home/worker/.ssh/id_rsa.pub ]; then
   gosu jenkins ssh-keygen -q -N "" -f /var/jenkins_home/worker/.ssh/id_rsa
