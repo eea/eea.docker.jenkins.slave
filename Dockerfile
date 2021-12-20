@@ -1,8 +1,8 @@
-FROM openjdk:8
+FROM openjdk:11
 
 ENV GOSU_VERSION=1.12 \
-    SWARM_VERSION=3.27 \
-    MD5=016be6aa789c9afd07b131cbb505beda \
+    SWARM_VERSION=3.29 \
+    MD5=ecf927ebc0b845a061b33deb6d7b55d8 \
     PHANTOMJS_VERSION=phantomjs-2.1.1-linux-x86_64 \
     MD5PHANTOMJS=1c947d57fce2f21ce0b43fe2ed7cd361  \
     CASPERJS_VERSION=1.1.4-2 \

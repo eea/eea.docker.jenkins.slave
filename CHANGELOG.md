@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.29 (2021-12-20)
+
+- Upgrade to swarm-client 3.29
+- Upgrade to jdk 11
+
 ## 3.27 (2021-06-30)
 
 - Upgrade to swarm-client 3.27
