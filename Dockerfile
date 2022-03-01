@@ -1,8 +1,8 @@
 FROM openjdk:11
 
 ENV GOSU_VERSION=1.12 \
-    SWARM_VERSION=3.29 \
-    MD5=ecf927ebc0b845a061b33deb6d7b55d8 \
+    SWARM_VERSION=3.30 \
+    MD5=37c320121385c266b1c8e0facb595336 \
     PHANTOMJS_VERSION=phantomjs-2.1.1-linux-x86_64 \
     MD5PHANTOMJS=1c947d57fce2f21ce0b43fe2ed7cd361  \
     CASPERJS_VERSION=1.1.4-2 \
@@ -10,7 +10,7 @@ ENV GOSU_VERSION=1.12 \
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates wget bzip2 python \
+ && apt-get install -y --no-install-recommends ca-certificates wget bzip2 python npm \
  && rm -rf /var/lib/apt/lists/* \
  && wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
  && wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" \
