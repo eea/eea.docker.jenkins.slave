@@ -101,6 +101,8 @@ if [ ! -z "$JENKINS_OPTS" ]; then
   PARAMS="$PARAMS $JENKINS_OPTS"
 fi
 
+
+
 RUN_AS_USER=jenkins
 
 if [[ "$RUN_AS_ROOT" == "yes" ]]; then

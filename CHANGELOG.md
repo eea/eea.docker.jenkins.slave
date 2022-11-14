@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.36 (2022-10-18)
+
+- Upgrade to swarm-client 3.36
+- Remove deprecated CasperJS and PhantomJS 
+
 ## 3.30 (2022-03-01)
 
 - Upgrade to swarm-client 3.30

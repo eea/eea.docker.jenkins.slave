@@ -1,11 +1,8 @@
 FROM openjdk:11
 
 ENV GOSU_VERSION=1.12 \
-    SWARM_VERSION=3.30 \
-    MD5=37c320121385c266b1c8e0facb595336 \
-    PHANTOMJS_VERSION=phantomjs-2.1.1-linux-x86_64 \
-    MD5PHANTOMJS=1c947d57fce2f21ce0b43fe2ed7cd361  \
-    CASPERJS_VERSION=1.1.4-2 \
+    SWARM_VERSION=3.36 \
+    MD5=9a69b245d815f7942b3b841a32f6d7bd \
     OPENSSL_CONF=/etc/ssl/
 
 # grab gosu for easy step-down from root
@@ -31,23 +28,13 @@ RUN curl "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "/tmp/get-pip.py" \
  && pip install virtualenv \
  && rm /tmp/get-pip.py
 
-# PhantomJS
-RUN wget --no-check-certificate https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOMJS_VERSION.tar.bz2 \
- && echo "$MD5PHANTOMJS  ${PHANTOMJS_VERSION}.tar.bz2" | md5sum -c - \
- && tar xvf ${PHANTOMJS_VERSION}.tar.bz2 \
- && mv $PHANTOMJS_VERSION/bin/phantomjs /usr/local/bin/ \
- && rm -rf phantom*
-
-# CasperJS
-RUN git clone  -b ${CASPERJS_VERSION}  git://github.com/casperjs/casperjs.git \
- && mv casperjs /opt/ \
- && ln -sf /opt/casperjs/bin/casperjs /usr/local/bin/casperjs
-
 # grab swarm-client.jar
 RUN mkdir -p /var/jenkins_home \
  && useradd -d /var/jenkins_home/worker -u 1000 -m -s /bin/bash jenkins \
  && curl -o /bin/swarm-client.jar -SL https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$SWARM_VERSION/swarm-client-$SWARM_VERSION.jar \
- && echo "$MD5  /bin/swarm-client.jar" | md5sum -c -
+ && echo "$MD5  /bin/swarm-client.jar" | md5sum -c - \
+ && mkdir -p ~/.ssh \
+ && ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 COPY docker-entrypoint.sh /
 
