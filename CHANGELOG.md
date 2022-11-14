@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.37 (2022-11-14)
+
+- Upgrade to swarm-client 3.37
+- Upgrade GOSU to 1.14
+
 ## 3.36 (2022-10-18)
 
 - Upgrade to swarm-client 3.36
