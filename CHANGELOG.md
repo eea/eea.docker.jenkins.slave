@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.37-1 (2022-11-28)
+
+- Add make
+
 ## 3.37 (2022-11-14)
 
 - Upgrade to swarm-client 3.37
