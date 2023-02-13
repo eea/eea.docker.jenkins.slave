@@ -1,8 +1,8 @@
 FROM openjdk:11
 
 ENV GOSU_VERSION=1.14 \
-    SWARM_VERSION=3.37 \
-    MD5=5a0ca070cbe0c9c3f2771bdbb2dff861 \
+    SWARM_VERSION=3.39 \
+    MD5=95ccf91d9484329a6df97262cf7af8da \
     OPENSSL_CONF=/etc/ssl/
 
 # grab gosu for easy step-down from root
