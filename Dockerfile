@@ -1,8 +1,7 @@
 FROM openjdk:11
 
 ENV SWARM_VERSION=3.39 \
-    MD5=95ccf91d9484329a6df97262cf7af8da \
-    BUILDX_VERSION=v0.10.4
+    MD5=95ccf91d9484329a6df97262cf7af8da 
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
