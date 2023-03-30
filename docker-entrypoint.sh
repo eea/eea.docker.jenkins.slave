@@ -120,6 +120,12 @@ if [ ! -e /var/jenkins_home/worker/.ssh/id_rsa.pub ]; then
   echo "================================================================================"
 fi
 
+#update known_hosts from docker image in volume
+cp /root/.ssh/known_hosts /var/jenkins_home/worker/.ssh/known_hosts
+chmod 644 /var/jenkins_home/worker/.ssh/known_hosts
+chown -R jenkins:jenkins /var/jenkins_home/worker/.ssh
+
+
 if [ "$1" = "java" ]; then
   exec gosu $RUN_AS_USER java $JAVA_OPTS -jar /bin/swarm-client.jar -fsroot /var/jenkins_home/worker/ -labels "$JENKINS_LABELS" $PARAMS
 fi
