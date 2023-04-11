@@ -1,7 +1,7 @@
 FROM openjdk:11
 
-ENV SWARM_VERSION=3.39 \
-    MD5=95ccf91d9484329a6df97262cf7af8da 
+ENV SWARM_VERSION=3.40 \
+    MD5=f81677c2c62c6909e938ae171e8b854f 
 
 # grab gosu for easy step-down from root
 RUN apt-get update \

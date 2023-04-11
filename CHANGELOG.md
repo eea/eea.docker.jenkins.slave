@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.40 (2023-04-11)
+
+- Upgrade to swarm-client 3.40
+
 ## 3.39-1 (2023-03-17)
 
 - Refactor gosu installation
