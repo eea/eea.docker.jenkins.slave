@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.41 (2023-10-25)
+
+- Upgrade to swarm-client 3.41
+- Add jq
+
 ## 3.40 (2023-04-11)
 
 - Upgrade to swarm-client 3.40

@@ -1,11 +1,11 @@
 FROM openjdk:11
 
-ENV SWARM_VERSION=3.40 \
-    MD5=f81677c2c62c6909e938ae171e8b854f 
+ENV SWARM_VERSION=3.41 \
+    MD5=ff5ced3ffafd2217e38bf03affc12739 
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates wget bzip2 python npm make gosu \
+ && apt-get install -y --no-install-recommends ca-certificates wget bzip2 python npm make gosu jq \
  && rm -rf /var/lib/apt/lists/* \
  && gosu nobody true \
 # Python virtualenv
