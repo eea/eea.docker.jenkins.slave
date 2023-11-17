@@ -1,4 +1,4 @@
-FROM openjdk:17
+FROM openjdk:17-buster
 
 ENV SWARM_VERSION=3.41 \
     MD5=ff5ced3ffafd2217e38bf03affc12739 
