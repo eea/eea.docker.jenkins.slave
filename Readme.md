@@ -11,17 +11,6 @@ This image is generic, thus you can obviously re-use it within your non-related 
 
 - [`:latest`  (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/master/Dockerfile)
 - [`:3.47` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.47/Dockerfile)
-- [`:3.46` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.46/Dockerfile)
-- [`:3.44` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.44/Dockerfile)
-- [`:3.42` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.42/Dockerfile)
-- [`:3.41` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.41/Dockerfile)
-- [`:3.40` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.40/Dockerfile)
-- [`:3.39` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.39/Dockerfile)
-- [`:3.37` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.37/Dockerfile)
-- [`:3.36` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.36/Dockerfile)
-- [`:3.30` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.30/Dockerfile)
-- [`:3.29` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.29/Dockerfile)
-- [`:3.27` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/3.27/Dockerfile)
 
 See [older versions](https://github.com/eea/eea.docker.jenkins.slave/releases)
 
