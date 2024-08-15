@@ -32,7 +32,7 @@ sed -i "s#SWARM_VERSION=.* #SWARM_VERSION=$new_version #" Dockerfile
 sed -i "s#MD5=.* #MD5=$new_md5 #" Dockerfile
 
 if [ $(grep -c $new_tag/Dockerfile Readme.md) -eq 0 ]; then
-sed -i "/latest/a\- [\`:$new_tag\` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/$new_tag/Dockerfile)" Readme.md  
+sed -i "s|.*eea.docker.jenkins.slave/blob/[0-9].*|\- [\`:$new_tag\` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/$new_tag/Dockerfile)|" Readme.md  
 fi
 
 
@@ -85,7 +85,7 @@ git pull
 sed -i "s/jenkins-slave:.*/jenkins-slave:$new_tag/" Dockerfile
 
 if [ $(grep -c $new_tag/Dockerfile Readme.md) -eq 0 ]; then
-sed -i "/latest/a\- [\`:$new_tag\` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/$new_tag/Dockerfile)" Readme.md
+sed -i "s|.*eea.docker.jenkins.slave/blob/[0-9].*|\- [\`:$new_tag\` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/$new_tag/Dockerfile)|" Readme.md
 fi
 
 if [ $(grep -c "## $new_tag " CHANGELOG.md) -eq 0 ]; then
@@ -191,7 +191,7 @@ block="## $new_tag ($(date +%F))$block"
 
 
 if [ $(grep -c $new_tag/Dockerfile Readme.md) -eq 0 ]; then
-sed -i "/latest/a\- [\`:$new_tag\` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/$new_tag/Dockerfile)" Readme.md
+sed -i "s|.*eea.docker.jenkins.slave/blob/[0-9].*|\- [\`:$new_tag\` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/$new_tag/Dockerfile)|" Readme.md
 fi
 
 if [ $(grep -c "## $new_tag " CHANGELOG.md) -eq 0 ]; then
