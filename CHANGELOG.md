@@ -3,6 +3,7 @@
 ## 3.47 (2024-08-15)
 
 - Upgrade to swarm-client 3.47
+- Upgrade to Eclipse-temurin:17-jre-focal
 
 ## 3.46 (2024-06-18)
 

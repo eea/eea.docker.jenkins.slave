@@ -1,11 +1,11 @@
-FROM openjdk:17-buster
+FROM eclipse-temurin:17-jre-focal
 
 ENV SWARM_VERSION=3.47 \
     MD5=6d1f920040528151e78fd89e55b73f32 
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates wget bzip2 python npm make gosu jq \
+ && apt-get install -y --no-install-recommends ssh ca-certificates wget bzip2 python npm make gosu jq \
  && rm -rf /var/lib/apt/lists/* \
  && gosu nobody true \
 # Python virtualenv
