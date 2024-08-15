@@ -1,7 +1,7 @@
 FROM openjdk:17-buster
 
-ENV SWARM_VERSION=3.46 \
-    MD5=169f174d0de38e0482c14340108e8366 
+ENV SWARM_VERSION=3.47 \
+    MD5=6d1f920040528151e78fd89e55b73f32 
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
