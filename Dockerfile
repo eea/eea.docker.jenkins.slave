@@ -5,7 +5,7 @@ ENV SWARM_VERSION=3.47 \
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ssh ca-certificates wget bzip2 python npm make gosu jq \
+ && apt-get install -y --no-install-recommends ssh ca-certificates wget bzip2 python npm make gosu jq git \
  && rm -rf /var/lib/apt/lists/* \
  && gosu nobody true \
 # Python virtualenv
