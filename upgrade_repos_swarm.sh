@@ -73,56 +73,6 @@ if [ $( git tag | grep -c $new_tag ) -eq 0 ]; then
 fi
 
 
-echo "upgrade slave-eea"
-echo "continue?"
-read check
-if [ -z "$check" ]; then
-
-#upgrade slave-eea
-cd ../eea.docker.jenkins.slave-eea/
-
-git pull
-sed -i "s/jenkins-slave:.*/jenkins-slave:$new_tag/" Dockerfile
-
-if [ $(grep -c $new_tag/Dockerfile Readme.md) -eq 0 ]; then
-sed -i "s|.*eea.docker.jenkins.slave/blob/[0-9].*|\- [\`:$new_tag\` (*Dockerfile*)](https://github.com/eea/eea.docker.jenkins.slave/blob/$new_tag/Dockerfile)|" Readme.md
-fi
-
-if [ $(grep -c "## $new_tag " CHANGELOG.md) -eq 0 ]; then
-block="## $new_tag ($(date +%F))\n\n- Upgrade to swarm-client $new_version\n"
-echo $block 
-echo "Continue? enter for yes, anything else for no"
-read check
-if [ -n "$check" ]; then
- echo "Give new changelog"
- read block
-fi
-sed -i "3 i $block" CHANGELOG.md
-fi
-
-git diff | more
-git status
-if [ $( git diff | wc -l ) -ne 0 ]; then
- echo "continue? git commit"
- read check
- if [ -z "$check" ]; then
-  git add Dockerfile CHANGELOG.md Readme.md
-  git commit -m "Upgrade to swarm-client $new_version"
-  git push
- fi
-fi
-
-if [ $( git tag | grep -c $new_tag ) -eq 0 ]; then
- echo "continue? git tag"
- read check
- if [ -z "$check" ]; then
-  git tag -a $new_tag -m $new_tag
-  git push origin $new_tag
- fi
-fi
-
-fi
-
 
 echo "upgrade slave-dind"
 echo "continue?"
