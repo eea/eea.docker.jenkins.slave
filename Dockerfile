@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17-jre-focal
 
-ENV SWARM_VERSION=3.47 \
-    MD5=6d1f920040528151e78fd89e55b73f32 
+ENV SWARM_VERSION=3.48 \
+    MD5=ff38cc89ad1086183b2153248e5fe96e 
 
 # grab gosu for easy step-down from root
 RUN apt-get update \

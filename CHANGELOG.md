@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.48 (2024-11-04)
+
+- Upgrade to swarm-client 3.48
+
 ## 3.47 (2024-08-15)
 
 - Upgrade to swarm-client 3.47
