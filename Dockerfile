@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17-jre-focal
 
-ENV SWARM_VERSION=3.49 \
-    MD5=6bfae61d1c500fbe156c62ae3a8ac56c 
+ENV SWARM_VERSION=3.51 \
+    MD5=75a09418a10ee3f331e72d73a27e076d 
 
 #same versions as eeacms/gitflow
 ENV YQ_VERSION=v4.48.1

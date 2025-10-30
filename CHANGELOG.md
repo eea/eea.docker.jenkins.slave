@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.51 (2025-10-30)
+
+- Upgrade to swarm-client 3.51
+- Added yq v4.48.1 and jq 1.6
+- Added env variable on the versions of yq and jq
+
 ## 3.49 (2025-01-20)
 
 - Upgrade to swarm-client 3.49
