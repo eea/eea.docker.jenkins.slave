@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jre-focal
+FROM eclipse-temurin:21-jre-noble
 
 ENV SWARM_VERSION=3.51 \
     MD5=75a09418a10ee3f331e72d73a27e076d 
