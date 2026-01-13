@@ -7,6 +7,11 @@ ENV SWARM_VERSION=3.51 \
 ENV YQ_VERSION=v4.48.1
 ENV JQ_VERSION=1.6
 
+ENV JENKINS_HOME=/var/jenkins_home
+ARG user=jenkins
+ARG group=jenkins
+ARG uid=1000
+ARG gid=1000
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
@@ -15,11 +20,19 @@ RUN apt-get update \
  && chmod 755 /usr/bin/jq \
  && wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64.tar.gz -O - | tar xz \
  && mv yq_linux_amd64 /usr/bin/yq \
- && rm -rf /var/lib/apt/lists/* \
- && gosu nobody true \
+ && rm -rf /var/lib/apt/lists/*
+
+
+RUN usermod -u 1001 ubuntu \
+  && groupmod -g 1001 ubuntu \
+  && mkdir -p $JENKINS_HOME \
+  && chown ${uid}:${gid} $JENKINS_HOME \
+  && groupadd -g ${gid} ${group} \
+  && useradd -d "$JENKINS_HOME" -u ${uid} -g ${gid} -l -m -s /bin/bash ${user}
+
+
+ RUN gosu nobody true \
 # grab swarm-client.jar
- && mkdir -p /var/jenkins_home \
- && useradd -d /var/jenkins_home/worker -u 1000 -m -s /bin/bash jenkins \
  && curl -o /bin/swarm-client.jar -SL https://repo.jenkins-ci.org/releases/org/jenkins-ci/plugins/swarm-client/$SWARM_VERSION/swarm-client-$SWARM_VERSION.jar \
  && echo "$MD5  /bin/swarm-client.jar" | md5sum -c - \
  && mkdir -p ~/.ssh \
