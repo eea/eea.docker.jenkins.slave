@@ -10,7 +10,7 @@ ENV JQ_VERSION=1.6
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ssh ca-certificates wget bzip2 python npm make gosu git \
+ && apt-get install -y --no-install-recommends ssh ca-certificates wget bzip2 python3 npm make gosu git \
  && curl -L -o /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 \
  && chmod 755 /usr/bin/jq \
  && wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64.tar.gz -O - | tar xz \
