@@ -10,18 +10,13 @@ ENV JQ_VERSION=1.6
 
 # grab gosu for easy step-down from root
 RUN apt-get update \
- && apt-get install -y --no-install-recommends ssh ca-certificates wget bzip2 python3 npm make gosu git \
+ && apt-get install -y --no-install-recommends ssh ca-certificates wget bzip2 python3 python3-pip python3-virtualenv npm make gosu git \
  && curl -L -o /usr/bin/jq https://github.com/stedolan/jq/releases/download/jq-${JQ_VERSION}/jq-linux64 \
  && chmod 755 /usr/bin/jq \
  && wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/yq_linux_amd64.tar.gz -O - | tar xz \
  && mv yq_linux_amd64 /usr/bin/yq \
  && rm -rf /var/lib/apt/lists/* \
  && gosu nobody true \
-# Python virtualenv
- && curl "https://bootstrap.pypa.io/pip/2.7/get-pip.py" -o "/tmp/get-pip.py" \
- && python /tmp/get-pip.py \
- && pip install virtualenv \
- && rm /tmp/get-pip.py \
 # grab swarm-client.jar
  && mkdir -p /var/jenkins_home \
  && useradd -d /var/jenkins_home/worker -u 1000 -m -s /bin/bash jenkins \
