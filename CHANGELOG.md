@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.51-1 (2026-01-13)
+
+- Upgrade java to 21
+
 ## 3.51 (2025-10-30)
 
 - Upgrade to swarm-client 3.51
